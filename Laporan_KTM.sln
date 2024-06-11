@@ -7,11 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI_Laporan_KTM", "GUI_Lapo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laporan_KTM", "Laporan_KTM\Laporan_KTM.csproj", "{2F240039-CED4-4529-BBE4-A70BE66EA0D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laporan_KTM_API", "Laporan_KTM_API\Laporan_KTM_API.csproj", "{BDBEB46A-F34D-4FF6-B6B6-4AA7D304E6B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laporan_KTM_API", "Laporan_KTM_API\Laporan_KTM_API.csproj", "{BDBEB46A-F34D-4FF6-B6B6-4AA7D304E6B8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laporan_KTM_Library", "Laporan_KTM_Library\Laporan_KTM_Library.csproj", "{8495A77D-26B2-459C-A6FA-3CDA13512890}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laporan_KTM_Unit_Testing", "Laporan_KTM_Unit_Testing\Laporan_KTM_Unit_Testing.csproj", "{A728ADAF-171C-4915-9AA8-D2467B4229BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI_FindMyKTM", "GUI_FindMyKTM\GUI_FindMyKTM.csproj", "{77ED4AD9-7F25-489E-8EE5-1D9256B2C451}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{A728ADAF-171C-4915-9AA8-D2467B4229BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A728ADAF-171C-4915-9AA8-D2467B4229BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A728ADAF-171C-4915-9AA8-D2467B4229BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77ED4AD9-7F25-489E-8EE5-1D9256B2C451}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77ED4AD9-7F25-489E-8EE5-1D9256B2C451}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77ED4AD9-7F25-489E-8EE5-1D9256B2C451}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77ED4AD9-7F25-489E-8EE5-1D9256B2C451}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
