@@ -80,6 +80,7 @@
             this.btnProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // btnList
             // 
@@ -99,6 +100,7 @@
             this.btnList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnList.UseVisualStyleBackColor = true;
+            this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
             // btnSearch
             // 
@@ -118,6 +120,7 @@
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnEditDelete
             // 
@@ -137,6 +140,7 @@
             this.btnEditDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditDelete.UseVisualStyleBackColor = true;
+            this.btnEditDelete.Click += new System.EventHandler(this.btnEditDelete_Click);
             // 
             // btnCreate
             // 
@@ -156,6 +160,7 @@
             this.btnCreate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCreate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // Form1
             // 
@@ -163,6 +168,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1081, 585);
             this.Controls.Add(this.panelMenu);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Form1";
             this.Text = "Form1";
             this.panelMenu.ResumeLayout(false);
