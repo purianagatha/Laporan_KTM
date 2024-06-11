@@ -23,6 +23,7 @@ namespace GUI_FindMyKTM
         public Form1()
         {
             InitializeComponent();
+            random = new Random();
         }
 
         //Methods
@@ -31,7 +32,7 @@ namespace GUI_FindMyKTM
             int index = random.Next(ThemeColor.ColorList.Count);
             while (tempIndex == index)
             {
-                random.Next(ThemeColor.ColorList.Count);
+                index = random.Next(ThemeColor.ColorList.Count);
             }
             tempIndex = index;
             string color = ThemeColor.ColorList[index];
@@ -43,13 +44,51 @@ namespace GUI_FindMyKTM
             if (btnSender != null) { 
                 if(currentButton != (Button)btnSender)
                 {
+                    DissableButton();
                     Color color = SelectThemeColor();
                     currentButton = (Button)btnSender;
                     currentButton.BackColor = color;
                     currentButton.ForeColor = Color.White;
-
+                    currentButton.Font = new System.Drawing.Font("Century Gothic", 11.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
             }
+        }
+        private void DissableButton()
+        {
+            foreach (Control previousBtn in panelMenu.Controls)
+            {
+                if(previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.BackColor = Color.FromArgb(133, 24, 42);
+                    previousBtn.ForeColor = Color.Gainsboro;
+                    previousBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                }
+            }
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+        }
+
+        private void btnEditDelete_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+        }
+
+        private void btnList_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
         }
     }
 }
