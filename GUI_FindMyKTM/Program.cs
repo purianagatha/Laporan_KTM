@@ -8,6 +8,7 @@ using System.Net.Http.Json;
 using System.Net.Http.Headers;
 using GUI_FindMyKTM.Entities;
 using GUI_FindMyKTM.Reuseable;
+using GUI_FindMyKTM.Forms;
 
 namespace GUI_FindMyKTM
 {
@@ -24,7 +25,7 @@ namespace GUI_FindMyKTM
             Console.WriteLine(Connection.client.BaseAddress);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormAuthentication());
         }
     }
 }
