@@ -16,5 +16,10 @@ namespace GUI_FindMyKTM.Forms
         {
             InitializeComponent();
         }
+
+        private void panelTitleBar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
