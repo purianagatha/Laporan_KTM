@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GUI_FindMyKTM.Entities
 {
-    internal class Student
+    public class Student
     {
         public string Id { get; set; }
         public string Name { get; set; }

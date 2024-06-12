@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GUI_FindMyKTM.Entities
 {
-    internal class Report
+    public class Report
     {
         public string Id { get; set; } = Guid.NewGuid().ToString();
         public string Title { get; set; }
@@ -14,6 +14,5 @@ namespace GUI_FindMyKTM.Entities
         public string Status { get; set; }
         public DateTime CreatedAt { get; set; }
         public string StudentId { get; set; }
-        public Student Student { get; set; }
     }
 }
