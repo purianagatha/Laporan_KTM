@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using GUI_FindMyKTM;
 
 namespace GUI_FindMyKTM.Forms
 {
@@ -18,6 +19,12 @@ namespace GUI_FindMyKTM.Forms
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            Form1 search = new Form1();
+            search.Show();
         }
     }
 }
