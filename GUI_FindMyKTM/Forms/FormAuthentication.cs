@@ -10,6 +10,10 @@ namespace GUI_FindMyKTM.Forms
         public FormAuthentication()
         {
             InitializeComponent();
+            fieldPassword.Text = "";
+            fieldConfirmPassword.Text = "";
+            fieldPassword.PasswordChar = '*';
+            fieldConfirmPassword.PasswordChar = '*';
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -35,9 +39,22 @@ namespace GUI_FindMyKTM.Forms
                 Password = fieldPassword.Text,
             };
 
-            AuthController authController = new AuthController();
-            authController.RegisterAsync(student);
-            Console.WriteLine("Tetenonet");
+            if (fieldPassword.Text != fieldConfirmPassword.Text)
+            {
+                validationLabel.Text = "Password tidak sesuai dengan confirmasi password";
+            } else
+            {
+                AuthController authController = new AuthController();
+                authController.RegisterAsync(student);
+                validationLabel.Text = "Sesuai!";
+            }
+
+            
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

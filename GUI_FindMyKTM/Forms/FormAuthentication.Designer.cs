@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.validationLabel = new System.Windows.Forms.Label();
             this.fieldPhone = new System.Windows.Forms.TextBox();
             this.fieldPassword = new System.Windows.Forms.TextBox();
             this.fieldConfirmPassword = new System.Windows.Forms.TextBox();
@@ -70,6 +71,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.validationLabel);
             this.tabPage1.Controls.Add(this.fieldPhone);
             this.tabPage1.Controls.Add(this.fieldPassword);
             this.tabPage1.Controls.Add(this.fieldConfirmPassword);
@@ -95,6 +97,16 @@
             this.tabPage1.Text = "Register";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // validationLabel
+            // 
+            this.validationLabel.AutoSize = true;
+            this.validationLabel.ForeColor = System.Drawing.Color.Crimson;
+            this.validationLabel.Location = new System.Drawing.Point(579, 318);
+            this.validationLabel.Name = "validationLabel";
+            this.validationLabel.Size = new System.Drawing.Size(0, 25);
+            this.validationLabel.TabIndex = 17;
+            this.validationLabel.Click += new System.EventHandler(this.label11_Click);
             // 
             // fieldPhone
             // 
@@ -335,5 +347,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox loginPassword;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Label validationLabel;
     }
 }
