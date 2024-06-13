@@ -38,7 +38,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ButtonCari = new System.Windows.Forms.Button();
+            this.ButtonProses = new System.Windows.Forms.Button();
+            this.ButtonBermasalh = new System.Windows.Forms.Button();
+            this.LabelProses = new System.Windows.Forms.Label();
+            this.LabelSelamat = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label5
@@ -147,21 +151,65 @@
             this.label10.TabIndex = 19;
             this.label10.Text = "label10";
             // 
-            // button1
+            // ButtonCari
             // 
-            this.button1.Location = new System.Drawing.Point(330, 56);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ButtonCari.Location = new System.Drawing.Point(47, 46);
+            this.ButtonCari.Name = "ButtonCari";
+            this.ButtonCari.Size = new System.Drawing.Size(75, 23);
+            this.ButtonCari.TabIndex = 20;
+            this.ButtonCari.Text = "Cari";
+            this.ButtonCari.UseVisualStyleBackColor = true;
+            this.ButtonCari.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // ButtonProses
+            // 
+            this.ButtonProses.Location = new System.Drawing.Point(175, 46);
+            this.ButtonProses.Name = "ButtonProses";
+            this.ButtonProses.Size = new System.Drawing.Size(75, 23);
+            this.ButtonProses.TabIndex = 21;
+            this.ButtonProses.Text = "Proses";
+            this.ButtonProses.UseVisualStyleBackColor = true;
+            this.ButtonProses.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // ButtonBermasalh
+            // 
+            this.ButtonBermasalh.Location = new System.Drawing.Point(295, 46);
+            this.ButtonBermasalh.Name = "ButtonBermasalh";
+            this.ButtonBermasalh.Size = new System.Drawing.Size(75, 23);
+            this.ButtonBermasalh.TabIndex = 22;
+            this.ButtonBermasalh.Text = "Proses";
+            this.ButtonBermasalh.UseVisualStyleBackColor = true;
+            this.ButtonBermasalh.Click += new System.EventHandler(this.ButtonBermasalh_Click);
+            // 
+            // LabelProses
+            // 
+            this.LabelProses.AutoSize = true;
+            this.LabelProses.Location = new System.Drawing.Point(439, 37);
+            this.LabelProses.Name = "LabelProses";
+            this.LabelProses.Size = new System.Drawing.Size(41, 13);
+            this.LabelProses.TabIndex = 23;
+            this.LabelProses.Text = "label11";
+            // 
+            // LabelSelamat
+            // 
+            this.LabelSelamat.AutoSize = true;
+            this.LabelSelamat.Location = new System.Drawing.Point(439, 66);
+            this.LabelSelamat.Name = "LabelSelamat";
+            this.LabelSelamat.Size = new System.Drawing.Size(85, 13);
+            this.LabelSelamat.TabIndex = 24;
+            this.LabelSelamat.Text = "Selamat Berhasil";
+            this.LabelSelamat.Click += new System.EventHandler(this.label12_Click);
             // 
             // FormEditDelete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 372);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.LabelSelamat);
+            this.Controls.Add(this.LabelProses);
+            this.Controls.Add(this.ButtonBermasalh);
+            this.Controls.Add(this.ButtonProses);
+            this.Controls.Add(this.ButtonCari);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -172,7 +220,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormEditDelete";
             this.Text = "FormEditDelete";
             this.ResumeLayout(false);
@@ -191,6 +239,10 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ButtonCari;
+        private System.Windows.Forms.Button ButtonProses;
+        private System.Windows.Forms.Button ButtonBermasalh;
+        private System.Windows.Forms.Label LabelProses;
+        private System.Windows.Forms.Label LabelSelamat;
     }
 }
