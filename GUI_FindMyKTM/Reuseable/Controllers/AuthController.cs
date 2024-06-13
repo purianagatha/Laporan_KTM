@@ -15,12 +15,42 @@ namespace GUI_FindMyKTM.Reuseable.Controllers
         {
             var loginStudent = new { EmailSSO = emailSSO, Password = password };
 
-            HttpResponseMessage response = await Connection.client.PostAsJsonAsync("api/auth/login", loginStudent);
-
-            if (response.IsSuccessStatusCode)
+            try
             {
-                var result = await response.Content.ReadAsStringAsync();
-                MessageBox.Show($"Berhasil Login!, Hallo {emailSSO}");
+
+                HttpResponseMessage response = await Connection.client.PostAsJsonAsync("api/auth/login", loginStudent);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var result = await response.Content.ReadAsStringAsync();
+                    MessageBox.Show($"Berhasil Login!, Hallo {emailSSO}");
+                }
+                else
+                {
+                    switch (response.StatusCode)
+                    {
+                        case HttpStatusCode.Unauthorized:
+                            MessageBox.Show("Email dan password salah. Ulang lagi");
+                            break;
+                        case HttpStatusCode.BadRequest:
+                            MessageBox.Show("Bad Request. Check ulang deh inputnya");
+                            break;
+                        case HttpStatusCode.InternalServerError:
+                            MessageBox.Show("Server Error. Ulang lagi");
+                            break;
+                        default:
+                            MessageBox.Show($"Error : {response.ReasonPhrase}");
+                            break;
+                    }
+                }
+            }
+            catch (HttpRequestException httpException)
+            {
+                MessageBox.Show($"Request Error : {httpException.Message}");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Unexpected Error : {e.Message}");
             }
         }
         public async Task RegisterAsync(Student objStudent)
