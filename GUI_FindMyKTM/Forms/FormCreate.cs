@@ -17,34 +17,24 @@ namespace GUI_FindMyKTM.Forms
 {
     public partial class FormCreate : Form
     {
-        private const string ReportApiUrl = "api/Report"; // Use a constant for the API URL
-
         public FormCreate()
         {
             InitializeComponent();
-            InitializeFormFields();
-        }
-
-        // Separate method to initialize form fields
-        private void InitializeFormFields()
-        {
             textBoxNama.Text = AuthController.nama;
             textBoxFakultas.Text = AuthController.fakultas;
             textBoxNoHp.Text = AuthController.noHp;
             textBoxNIM.Text = AuthController.nim;
         }
 
-        private async void ButtonSubmit_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            var report = CreateReport();
-            await SubmitReportAsync(report);
-            ClearFormFields();
+
         }
 
-        // Create report object from form fields
-        private Report CreateReport()
+        private async void button1_Click(object sender, EventArgs e)
         {
-            return new Report
+            // SUBMIT BUTTON
+            Report report = new Report
             {
                 Id = Guid.NewGuid().ToString(),
                 Title = "Hilang KTM",
@@ -52,15 +42,11 @@ namespace GUI_FindMyKTM.Forms
                 Status = "Waiting",
                 StudentId = AuthController.studentId,
             };
-        }
 
-        // Submit report to API
-        private async Task SubmitReportAsync(Report report)
-        {
-            // Secure Code
             try
             {
-                var response = await Connection.client.PostAsJsonAsync(ReportApiUrl, report);
+                Console.WriteLine(textBoxAlasan.Text);
+                var response = await Connection.client.PostAsJsonAsync("api/Report", report); // bingung
                 response.EnsureSuccessStatusCode();
 
                 if (response.IsSuccessStatusCode)
@@ -76,11 +62,15 @@ namespace GUI_FindMyKTM.Forms
             {
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
-        }
 
-        // Clear form fields after submission
-        private void ClearFormFields()
-        {
+            // Save the report to the list
+            //reports.Add(report);
+
+            // Optionally, display a message to the user
+            //MessageBox.Show("Report has been saved successfully!");
+
+            // Clear the text fields after saving
+
             textBoxNama.Clear();
             textBoxNIM.Clear();
             textBoxFakultas.Clear();
