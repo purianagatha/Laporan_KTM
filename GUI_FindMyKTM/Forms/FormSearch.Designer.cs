@@ -28,215 +28,99 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnEditDelete = new System.Windows.Forms.Button();
-            this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnProfile = new System.Windows.Forms.Button();
-            this.btnList = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnCreate = new System.Windows.Forms.Button();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.panelDesktop = new System.Windows.Forms.Panel();
-            this.panelMenu.SuspendLayout();
-            this.panelLogo.SuspendLayout();
-            this.panelTitleBar.SuspendLayout();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.ListReportGrid = new System.Windows.Forms.DataGridView();
+            this.searchField = new System.Windows.Forms.TextBox();
+            this.searchLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.ListReportGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnEditDelete
+            // ListReportGrid
             // 
-            this.btnEditDelete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEditDelete.FlatAppearance.BorderSize = 0;
-            this.btnEditDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditDelete.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditDelete.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnEditDelete.Image = global::GUI_FindMyKTM.Properties.Resources.icons8_delete_document_24;
-            this.btnEditDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditDelete.Location = new System.Drawing.Point(0, 140);
-            this.btnEditDelete.Name = "btnEditDelete";
-            this.btnEditDelete.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnEditDelete.Size = new System.Drawing.Size(220, 60);
-            this.btnEditDelete.TabIndex = 1;
-            this.btnEditDelete.Text = "   Edit/Delete ";
-            this.btnEditDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEditDelete.UseVisualStyleBackColor = true;
+            this.ListReportGrid.AllowUserToAddRows = false;
+            this.ListReportGrid.AllowUserToDeleteRows = false;
+            this.ListReportGrid.AllowUserToResizeColumns = false;
+            this.ListReportGrid.AllowUserToResizeRows = false;
+            this.ListReportGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.ListReportGrid.BackgroundColor = System.Drawing.Color.White;
+            this.ListReportGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ListReportGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(24)))), ((int)(((byte)(42)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ListReportGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.ListReportGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ListReportGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ListReportGrid.EnableHeadersVisualStyles = false;
+            this.ListReportGrid.GridColor = System.Drawing.Color.White;
+            this.ListReportGrid.Location = new System.Drawing.Point(12, 65);
+            this.ListReportGrid.MultiSelect = false;
+            this.ListReportGrid.Name = "ListReportGrid";
+            this.ListReportGrid.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.ListReportGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.ListReportGrid.RowHeadersVisible = false;
+            this.ListReportGrid.RowHeadersWidth = 60;
+            this.ListReportGrid.RowTemplate.Height = 24;
+            this.ListReportGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ListReportGrid.Size = new System.Drawing.Size(826, 381);
+            this.ListReportGrid.TabIndex = 3;
             // 
-            // panelMenu
+            // searchField
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(24)))), ((int)(((byte)(42)))));
-            this.panelMenu.Controls.Add(this.btnProfile);
-            this.panelMenu.Controls.Add(this.btnList);
-            this.panelMenu.Controls.Add(this.btnSearch);
-            this.panelMenu.Controls.Add(this.btnEditDelete);
-            this.panelMenu.Controls.Add(this.btnCreate);
-            this.panelMenu.Controls.Add(this.panelLogo);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(0, 80);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 505);
-            this.panelMenu.TabIndex = 3;
+            this.searchField.Location = new System.Drawing.Point(679, 12);
+            this.searchField.Name = "searchField";
+            this.searchField.Size = new System.Drawing.Size(152, 22);
+            this.searchField.TabIndex = 4;
+            this.searchField.TextChanged += new System.EventHandler(this.searchField_TextChanged);
             // 
-            // btnProfile
+            // searchLabel
             // 
-            this.btnProfile.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProfile.FlatAppearance.BorderSize = 0;
-            this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfile.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfile.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnProfile.Image = global::GUI_FindMyKTM.Properties.Resources.icons8_user_24;
-            this.btnProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProfile.Location = new System.Drawing.Point(0, 320);
-            this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnProfile.Size = new System.Drawing.Size(220, 60);
-            this.btnProfile.TabIndex = 4;
-            this.btnProfile.Text = "   Profile";
-            this.btnProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnProfile.UseVisualStyleBackColor = true;
-            // 
-            // btnList
-            // 
-            this.btnList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnList.FlatAppearance.BorderSize = 0;
-            this.btnList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnList.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnList.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnList.Image = global::GUI_FindMyKTM.Properties.Resources.icons8_list_24;
-            this.btnList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnList.Location = new System.Drawing.Point(0, 260);
-            this.btnList.Name = "btnList";
-            this.btnList.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnList.Size = new System.Drawing.Size(220, 60);
-            this.btnList.TabIndex = 3;
-            this.btnList.Text = "   List";
-            this.btnList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnList.UseVisualStyleBackColor = true;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSearch.Image = global::GUI_FindMyKTM.Properties.Resources.icons8_search_24;
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(0, 200);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnSearch.Size = new System.Drawing.Size(220, 60);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "   Search";
-            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // btnCreate
-            // 
-            this.btnCreate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCreate.FlatAppearance.BorderSize = 0;
-            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreate.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnCreate.Image = global::GUI_FindMyKTM.Properties.Resources.icons8_create_24;
-            this.btnCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreate.Location = new System.Drawing.Point(0, 80);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnCreate.Size = new System.Drawing.Size(220, 60);
-            this.btnCreate.TabIndex = 0;
-            this.btnCreate.Text = "   Create";
-            this.btnCreate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCreate.UseVisualStyleBackColor = true;
-            // 
-            // panelLogo
-            // 
-            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(20)))), ((int)(((byte)(35)))));
-            this.panelLogo.Controls.Add(this.label1);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(220, 80);
-            this.panelLogo.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 40);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "FindMyKTM";
-            // 
-            // panelTitleBar
-            // 
-            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(24)))), ((int)(((byte)(42)))));
-            this.panelTitleBar.Controls.Add(this.lblTitle);
-            this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
-            this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1081, 80);
-            this.panelTitleBar.TabIndex = 4;
-            this.panelTitleBar.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTitleBar_Paint);
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(419, 20);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(244, 32);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "CREATE LAPORAN";
-            // 
-            // panelDesktop
-            // 
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(0, 0);
-            this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1081, 585);
-            this.panelDesktop.TabIndex = 5;
+            this.searchLabel.AutoSize = true;
+            this.searchLabel.Location = new System.Drawing.Point(621, 12);
+            this.searchLabel.Name = "searchLabel";
+            this.searchLabel.Size = new System.Drawing.Size(53, 16);
+            this.searchLabel.TabIndex = 5;
+            this.searchLabel.Text = "Search:";
             // 
             // FormSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1081, 585);
-            this.Controls.Add(this.panelMenu);
-            this.Controls.Add(this.panelTitleBar);
-            this.Controls.Add(this.panelDesktop);
+            this.ClientSize = new System.Drawing.Size(843, 458);
+            this.Controls.Add(this.searchLabel);
+            this.Controls.Add(this.searchField);
+            this.Controls.Add(this.ListReportGrid);
             this.Name = "FormSearch";
             this.Text = "FormSearch";
-            this.panelMenu.ResumeLayout(false);
-            this.panelLogo.ResumeLayout(false);
-            this.panelLogo.PerformLayout();
-            this.panelTitleBar.ResumeLayout(false);
-            this.panelTitleBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ListReportGrid)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnEditDelete;
-        private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Button btnProfile;
-        private System.Windows.Forms.Button btnList;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnCreate;
-        private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panelTitleBar;
-        private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Panel panelDesktop;
+        private System.Windows.Forms.DataGridView ListReportGrid;
+        private System.Windows.Forms.TextBox searchField;
+        private System.Windows.Forms.Label searchLabel;
     }
 }
