@@ -63,6 +63,13 @@ namespace GUI_FindMyKTM.Forms
         private void btnLogin_Click(object sender, EventArgs e)
         {
             authController.LoginAsync(loginEmail.Text, loginPassword.Text);
+            Form1 dashboard = new Form1();
+            dashboard.ShowDialog(); 
+        }
+
+        private void fieldName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

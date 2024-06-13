@@ -81,7 +81,7 @@
             this.ListReportGrid.RowHeadersWidth = 60;
             this.ListReportGrid.RowTemplate.Height = 24;
             this.ListReportGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ListReportGrid.Size = new System.Drawing.Size(826, 381);
+            this.ListReportGrid.Size = new System.Drawing.Size(1005, 475);
             this.ListReportGrid.TabIndex = 3;
             // 
             // searchField
@@ -105,7 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 458);
+            this.ClientSize = new System.Drawing.Size(1032, 550);
             this.Controls.Add(this.searchLabel);
             this.Controls.Add(this.searchField);
             this.Controls.Add(this.ListReportGrid);
