@@ -93,7 +93,7 @@
             this.listlaporan.RowHeadersWidth = 60;
             this.listlaporan.RowTemplate.Height = 24;
             this.listlaporan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.listlaporan.Size = new System.Drawing.Size(1098, 465);
+            this.listlaporan.Size = new System.Drawing.Size(1346, 465);
             this.listlaporan.TabIndex = 4;
             this.listlaporan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listlaporan_CellContentClick);
             // 
@@ -145,7 +145,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1157, 625);
+            this.ClientSize = new System.Drawing.Size(1396, 625);
             this.Controls.Add(this.deletebtn);
             this.Controls.Add(this.searchbtn);
             this.Controls.Add(this.editbtn);

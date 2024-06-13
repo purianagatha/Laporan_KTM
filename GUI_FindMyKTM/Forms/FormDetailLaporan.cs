@@ -91,5 +91,10 @@ namespace GUI_FindMyKTM.Forms
         {
 
         }
+
+        private void labelstudentid_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

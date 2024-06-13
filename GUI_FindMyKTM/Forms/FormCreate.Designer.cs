@@ -50,7 +50,7 @@
             this.label1.Size = new System.Drawing.Size(275, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nama Lengkap Mahasiswa";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            //this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -137,7 +137,7 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Simpan";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            //this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBoxAlasan
             // 
