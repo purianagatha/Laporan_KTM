@@ -91,7 +91,7 @@
             this.tabPage1.Controls.Add(this.btnRegister);
             this.tabPage1.Location = new System.Drawing.Point(4, 33);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1157, 655);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Register";
@@ -112,7 +112,7 @@
             // fieldPhone
             // 
             this.fieldPhone.Location = new System.Drawing.Point(1123, 82);
-            this.fieldPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fieldPhone.Margin = new System.Windows.Forms.Padding(4);
             this.fieldPhone.Name = "fieldPhone";
             this.fieldPhone.Size = new System.Drawing.Size(411, 29);
             this.fieldPhone.TabIndex = 16;
@@ -120,7 +120,7 @@
             // fieldPassword
             // 
             this.fieldPassword.Location = new System.Drawing.Point(1123, 207);
-            this.fieldPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fieldPassword.Margin = new System.Windows.Forms.Padding(4);
             this.fieldPassword.Name = "fieldPassword";
             this.fieldPassword.Size = new System.Drawing.Size(411, 29);
             this.fieldPassword.TabIndex = 15;
@@ -128,7 +128,7 @@
             // fieldConfirmPassword
             // 
             this.fieldConfirmPassword.Location = new System.Drawing.Point(1123, 334);
-            this.fieldConfirmPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fieldConfirmPassword.Margin = new System.Windows.Forms.Padding(4);
             this.fieldConfirmPassword.Name = "fieldConfirmPassword";
             this.fieldConfirmPassword.Size = new System.Drawing.Size(411, 29);
             this.fieldConfirmPassword.TabIndex = 14;
@@ -137,7 +137,7 @@
             // fieldName
             // 
             this.fieldName.Location = new System.Drawing.Point(236, 82);
-            this.fieldName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fieldName.Margin = new System.Windows.Forms.Padding(4);
             this.fieldName.Name = "fieldName";
             this.fieldName.Size = new System.Drawing.Size(411, 29);
             this.fieldName.TabIndex = 13;
@@ -146,7 +146,7 @@
             // fieldUsername
             // 
             this.fieldUsername.Location = new System.Drawing.Point(236, 213);
-            this.fieldUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fieldUsername.Margin = new System.Windows.Forms.Padding(4);
             this.fieldUsername.Name = "fieldUsername";
             this.fieldUsername.Size = new System.Drawing.Size(411, 29);
             this.fieldUsername.TabIndex = 12;
@@ -154,7 +154,7 @@
             // fieldFaculty
             // 
             this.fieldFaculty.Location = new System.Drawing.Point(236, 603);
-            this.fieldFaculty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fieldFaculty.Margin = new System.Windows.Forms.Padding(4);
             this.fieldFaculty.Name = "fieldFaculty";
             this.fieldFaculty.Size = new System.Drawing.Size(411, 29);
             this.fieldFaculty.TabIndex = 11;
@@ -162,7 +162,7 @@
             // fieldNim
             // 
             this.fieldNim.Location = new System.Drawing.Point(236, 477);
-            this.fieldNim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fieldNim.Margin = new System.Windows.Forms.Padding(4);
             this.fieldNim.Name = "fieldNim";
             this.fieldNim.Size = new System.Drawing.Size(411, 29);
             this.fieldNim.TabIndex = 10;
@@ -170,7 +170,7 @@
             // fieldEmail
             // 
             this.fieldEmail.Location = new System.Drawing.Point(236, 332);
-            this.fieldEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fieldEmail.Margin = new System.Windows.Forms.Padding(4);
             this.fieldEmail.Name = "fieldEmail";
             this.fieldEmail.Size = new System.Drawing.Size(411, 29);
             this.fieldEmail.TabIndex = 9;
@@ -258,7 +258,7 @@
             // btnRegister
             // 
             this.btnRegister.Location = new System.Drawing.Point(47, 784);
-            this.btnRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(474, 78);
             this.btnRegister.TabIndex = 0;
@@ -274,9 +274,9 @@
             this.tabPage2.Controls.Add(this.loginEmail);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(1157, 655);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Login";
@@ -285,7 +285,7 @@
             // btnLogin
             // 
             this.btnLogin.Location = new System.Drawing.Point(483, 522);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(550, 58);
             this.btnLogin.TabIndex = 4;
@@ -296,7 +296,7 @@
             // loginPassword
             // 
             this.loginPassword.Location = new System.Drawing.Point(483, 381);
-            this.loginPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loginPassword.Margin = new System.Windows.Forms.Padding(4);
             this.loginPassword.Name = "loginPassword";
             this.loginPassword.Size = new System.Drawing.Size(548, 29);
             this.loginPassword.TabIndex = 3;
@@ -313,7 +313,7 @@
             // loginEmail
             // 
             this.loginEmail.Location = new System.Drawing.Point(483, 214);
-            this.loginEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loginEmail.Margin = new System.Windows.Forms.Padding(4);
             this.loginEmail.Name = "loginEmail";
             this.loginEmail.Size = new System.Drawing.Size(548, 29);
             this.loginEmail.TabIndex = 1;
@@ -332,7 +332,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1159, 687);
+            this.ClientSize = new System.Drawing.Size(1159, 785);
             this.Controls.Add(this.tabControl1);
             this.Name = "FormAuthentication";
             this.Text = "FormAuthentication";

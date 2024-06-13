@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GUI_FindMyKTM.Reuseable.Response;
 
 namespace GUI_FindMyKTM.Reuseable.Controllers
 {
@@ -22,8 +23,8 @@ namespace GUI_FindMyKTM.Reuseable.Controllers
 
                 if (response.IsSuccessStatusCode)
                 {
-                    var result = await response.Content.ReadAsStringAsync();
-                    MessageBox.Show($"Berhasil Login!, Hallo {emailSSO}");
+                    var result = await response.Content.ReadFromJsonAsync<ResponseStudent>();
+                    MessageBox.Show($"Berhasil Login!, Hallo {result.Data.Data.Name}");
                 }
                 else
                 {

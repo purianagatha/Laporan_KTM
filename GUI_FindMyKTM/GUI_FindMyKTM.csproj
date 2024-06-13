@@ -142,6 +142,7 @@
     <Compile Include="Reuseable\Controllers\AuthController.cs" />
     <Compile Include="Reuseable\Controllers\ReportController.cs" />
     <Compile Include="Reuseable\Response\DefaultResponse.cs" />
+    <Compile Include="Reuseable\Response\ResponseStudent.cs" />
     <Compile Include="ThemeColor.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
