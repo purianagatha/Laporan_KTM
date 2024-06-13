@@ -7,6 +7,7 @@ namespace GUI_FindMyKTM.Forms
 {
     public partial class FormAuthentication : Form
     {
+        private AuthController authController = new AuthController();
         public FormAuthentication()
         {
             InitializeComponent();
@@ -14,6 +15,8 @@ namespace GUI_FindMyKTM.Forms
             fieldConfirmPassword.Text = "";
             fieldPassword.PasswordChar = '*';
             fieldConfirmPassword.PasswordChar = '*';
+            loginPassword.Text = "";
+            loginPassword.PasswordChar = '*';
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -44,7 +47,7 @@ namespace GUI_FindMyKTM.Forms
                 validationLabel.Text = "Password tidak sesuai dengan confirmasi password";
             } else
             {
-                AuthController authController = new AuthController();
+
                 authController.RegisterAsync(student);
                 validationLabel.Text = "Sesuai!";
             }
@@ -55,6 +58,11 @@ namespace GUI_FindMyKTM.Forms
         private void label11_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            authController.LoginAsync(loginEmail.Text, loginPassword.Text);
         }
     }
 }
