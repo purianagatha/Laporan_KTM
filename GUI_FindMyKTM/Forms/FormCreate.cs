@@ -11,6 +11,7 @@ using GUI_FindMyKTM.Reuseable;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Net.Http;
+using GUI_FindMyKTM.Reuseable.Controllers;
 
 namespace GUI_FindMyKTM.Forms
 {
@@ -19,6 +20,10 @@ namespace GUI_FindMyKTM.Forms
         public FormCreate()
         {
             InitializeComponent();
+            textBoxNama.Text = AuthController.nama;
+            textBoxFakultas.Text = AuthController.fakultas;
+            textBoxNoHp.Text = AuthController.noHp;
+            textBoxNIM.Text = AuthController.nim;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -29,36 +34,21 @@ namespace GUI_FindMyKTM.Forms
         private async void button1_Click(object sender, EventArgs e)
         {
             // SUBMIT BUTTON
-            var report = new Report
+            Report report = new Report
             {
-                CreatedAt = DateTime.Now,
+                Id = Guid.NewGuid().ToString(),
+                Title = "Hilang KTM",
                 Description = textBoxAlasan.Text,
-                Status = "Pending"
-            };
-
-            var apiUrl = "http://192.168.18.13:9000/";
-
-            var reportData = new
-            {
-                statusCode = 0,
-                message = "",
-                data = new
-                {
-                    id = Guid.NewGuid().ToString(), // bingung
-                    title = $"Laporan KTM {textBoxNIM.Text} - {DateTime.Now}",
-                    description = report.Description,
-                    status = report.Status,
-                    createdAt = report.CreatedAt,
-                    studentId = report.StudentId 
-                }
+                Status = "Waiting",
+                StudentId = AuthController.studentId,
             };
 
             try
             {
-                
-                var response = await Connection.client.PostAsJsonAsync(apiUrl, reportData); // bingung
+                Console.WriteLine(textBoxAlasan.Text);
+                var response = await Connection.client.PostAsJsonAsync("api/Report", report); // bingung
+                response.EnsureSuccessStatusCode();
 
-                Console.WriteLine("Test",report.StudentId, "Texy", report.CreatedAt);
                 if (response.IsSuccessStatusCode)
                 {
                     MessageBox.Show("Report has been saved successfully!");
@@ -80,6 +70,7 @@ namespace GUI_FindMyKTM.Forms
             //MessageBox.Show("Report has been saved successfully!");
 
             // Clear the text fields after saving
+
             textBoxNama.Clear();
             textBoxNIM.Clear();
             textBoxFakultas.Clear();
