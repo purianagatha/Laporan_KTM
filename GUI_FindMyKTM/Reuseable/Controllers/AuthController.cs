@@ -12,6 +12,11 @@ namespace GUI_FindMyKTM.Reuseable.Controllers
 {
     public class AuthController
     {
+        public static string studentId;
+        public static string nama;
+        public static string nim;
+        public static string fakultas;
+        public static string noHp;
         public async Task LoginAsync(string emailSSO, string password)
         {
             var loginStudent = new { EmailSSO = emailSSO, Password = password };
@@ -24,6 +29,12 @@ namespace GUI_FindMyKTM.Reuseable.Controllers
                 if (response.IsSuccessStatusCode)
                 {
                     var result = await response.Content.ReadFromJsonAsync<ResponseStudent>();
+                    studentId = result.Data.Data.Id.ToString();
+                    nama = result.Data.Data.Name;
+                    nim = result.Data.Data.Nim;
+                    fakultas = result.Data.Data.Faculty;
+                    noHp = result.Data.Data.Phone;
+                    Console.WriteLine(studentId);
                     MessageBox.Show($"Berhasil Login!, Hallo {result.Data.Data.Name}");
                 }
                 else
