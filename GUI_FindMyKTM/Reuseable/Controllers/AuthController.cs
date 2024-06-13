@@ -84,14 +84,25 @@ namespace GUI_FindMyKTM.Reuseable.Controllers
             {
 
                 HttpResponseMessage response = await Connection.client.PostAsJsonAsync("api/auth/register", student);
-                var responseBody = await response.Content.ReadFromJsonAsync<Student>();
-                Console.WriteLine(responseBody);
-                response.EnsureSuccessStatusCode();
+                
 
-            } catch (HttpRequestException e)
+                if (response.IsSuccessStatusCode) {
+                    var responseBody = await response.Content.ReadFromJsonAsync<Student>();
+                    
+                    MessageBox.Show("Berhasil Register");
+                } else
+                {
+                    MessageBox.Show("Error : ", response.ReasonPhrase);
+                }
+
+            }
+            catch (HttpRequestException httpException)
             {
-                Console.WriteLine("Controller Error : ", e.Message);
-                throw;
+                MessageBox.Show($"Request Error : {httpException.Message}");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Unexpected Error : {e.Message}");
             }
         }
     }
