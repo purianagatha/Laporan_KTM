@@ -33,11 +33,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxNama = new System.Windows.Forms.TextBox();
+            this.textBoxNIM = new System.Windows.Forms.TextBox();
+            this.textBoxFakultas = new System.Windows.Forms.TextBox();
+            this.textBoxNoHp = new System.Windows.Forms.TextBox();
+            this.textBoxAlasan = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -92,45 +92,47 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Alasan";
             // 
-            // textBox1
+            // textBoxNama
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(24, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(306, 28);
-            this.textBox1.TabIndex = 5;
+            this.textBoxNama.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNama.Location = new System.Drawing.Point(24, 72);
+            this.textBoxNama.Name = "textBoxNama";
+            this.textBoxNama.Size = new System.Drawing.Size(306, 28);
+            this.textBoxNama.TabIndex = 5;
+            this.textBoxNama.TextChanged += new System.EventHandler(this.textBoxNama_TextChanged);
             // 
-            // textBox2
+            // textBoxNIM
             // 
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(25, 155);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(305, 28);
-            this.textBox2.TabIndex = 6;
+            this.textBoxNIM.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNIM.Location = new System.Drawing.Point(25, 155);
+            this.textBoxNIM.Name = "textBoxNIM";
+            this.textBoxNIM.Size = new System.Drawing.Size(305, 28);
+            this.textBoxNIM.TabIndex = 6;
             // 
-            // textBox3
+            // textBoxFakultas
             // 
-            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(25, 246);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(305, 28);
-            this.textBox3.TabIndex = 7;
+            this.textBoxFakultas.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxFakultas.Location = new System.Drawing.Point(25, 246);
+            this.textBoxFakultas.Name = "textBoxFakultas";
+            this.textBoxFakultas.Size = new System.Drawing.Size(305, 28);
+            this.textBoxFakultas.TabIndex = 7;
             // 
-            // textBox4
+            // textBoxNoHp
             // 
-            this.textBox4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(25, 332);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(305, 28);
-            this.textBox4.TabIndex = 8;
+            this.textBoxNoHp.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNoHp.Location = new System.Drawing.Point(25, 332);
+            this.textBoxNoHp.Name = "textBoxNoHp";
+            this.textBoxNoHp.Size = new System.Drawing.Size(305, 28);
+            this.textBoxNoHp.TabIndex = 8;
             // 
-            // textBox5
+            // textBoxAlasan
             // 
-            this.textBox5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(504, 72);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(304, 28);
-            this.textBox5.TabIndex = 9;
+            this.textBoxAlasan.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAlasan.Location = new System.Drawing.Point(504, 72);
+            this.textBoxAlasan.Name = "textBoxAlasan";
+            this.textBoxAlasan.Size = new System.Drawing.Size(304, 28);
+            this.textBoxAlasan.TabIndex = 9;
+            this.textBoxAlasan.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // button1
             // 
@@ -141,6 +143,7 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Simpan";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormCreate
             // 
@@ -148,11 +151,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(843, 458);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxAlasan);
+            this.Controls.Add(this.textBoxNoHp);
+            this.Controls.Add(this.textBoxFakultas);
+            this.Controls.Add(this.textBoxNIM);
+            this.Controls.Add(this.textBoxNama);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -172,11 +175,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxNama;
+        private System.Windows.Forms.TextBox textBoxNIM;
+        private System.Windows.Forms.TextBox textBoxFakultas;
+        private System.Windows.Forms.TextBox textBoxNoHp;
+        private System.Windows.Forms.TextBox textBoxAlasan;
         private System.Windows.Forms.Button button1;
     }
 }
