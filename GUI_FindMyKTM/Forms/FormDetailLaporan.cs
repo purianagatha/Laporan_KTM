@@ -31,5 +31,9 @@ namespace GUI_FindMyKTM.Forms
             labelstatus.Text = status;
         }
 
+        private void labelstudentid_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
