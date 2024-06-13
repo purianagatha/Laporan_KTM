@@ -33,44 +33,44 @@ namespace GUI_FindMyKTM.Forms
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            // SUBMIT BUTTON
+            // Ketika tombol submit diklik, fungsi ini akan dieksekusi
+
+            // Membuat objek report baru dengan data dari input pengguna
             Report report = new Report
             {
-                Id = Guid.NewGuid().ToString(),
-                Title = "Hilang KTM",
-                Description = textBoxAlasan.Text,
-                Status = "Waiting",
-                StudentId = AuthController.studentId,
+                Id = Guid.NewGuid().ToString(),  // Menghasilkan ID unik baru untuk laporan
+                Title = "Hilang KTM",  // Judul tetap untuk laporan
+                Description = textBoxAlasan.Text,  // Mengambil alasan dari teks box alasan
+                Status = "Waiting",  // Status awal laporan
+                StudentId = AuthController.studentId,  // Menggunakan ID mahasiswa dari AuthController
             };
 
             try
             {
-                Console.WriteLine(textBoxAlasan.Text);
-                var response = await Connection.client.PostAsJsonAsync("api/Report", report); // bingung
-                response.EnsureSuccessStatusCode();
+                Console.WriteLine(textBoxAlasan.Text);  // Menampilkan alasan ke dalam console
+
+                // Mengirimkan objek report ke endpoint "api/Report" sebagai JSON secara asynchronous
+                var response = await Connection.client.PostAsJsonAsync("api/Report", report);
+                response.EnsureSuccessStatusCode();  // Memastikan request berhasil
 
                 if (response.IsSuccessStatusCode)
                 {
+                    // Menampilkan pesan sukses jika laporan berhasil disimpan
                     MessageBox.Show("Report has been saved successfully!");
                 }
                 else
                 {
+                    // Menampilkan pesan error jika gagal menyimpan laporan bersama dengan alasan error
                     MessageBox.Show($"Error: {response.ReasonPhrase}");
                 }
             }
             catch (Exception ex)
             {
+                // Menampilkan pesan error jika terjadi exception saat mengirimkan laporan
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
 
-            // Save the report to the list
-            //reports.Add(report);
-
-            // Optionally, display a message to the user
-            //MessageBox.Show("Report has been saved successfully!");
-
-            // Clear the text fields after saving
-
+            // Mengosongkan kolom input setelah laporan berhasil atau gagal disimpan
             textBoxNama.Clear();
             textBoxNIM.Clear();
             textBoxFakultas.Clear();
