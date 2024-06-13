@@ -17,10 +17,11 @@ namespace GUI_FindMyKTM
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
         [STAThread]
         static void Main()
         {
-            string baseUrl = "http://192.168.18.13:9000/"; //sesuain ip api kalian
+            string baseUrl = "http://localhost:9000/"; //sesuain ip api kalian
             Connection.Connect(baseUrl);
             Console.WriteLine(Connection.client.BaseAddress);
             Application.EnableVisualStyles();

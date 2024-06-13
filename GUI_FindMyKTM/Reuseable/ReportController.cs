@@ -12,7 +12,7 @@ namespace GUI_FindMyKTM.Reuseable
     {
         public static async Task<List<Report>> GetAllReportAsync()
         {
-            HttpResponseMessage response = await Connection.client.GetAsync("api/Report");
+            HttpResponseMessage response = await Connection.client.GetAsync("api/report");
             if (response.IsSuccessStatusCode)
             {
                 // Read and deserialize the response content

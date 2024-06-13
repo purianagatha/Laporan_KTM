@@ -23,8 +23,7 @@ namespace GUI_FindMyKTM.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Form1 search = new Form1();
-            search.Show();
+
         }
     }
 }

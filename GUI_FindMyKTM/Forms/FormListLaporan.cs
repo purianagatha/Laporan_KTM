@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,46 +20,94 @@ namespace GUI_FindMyKTM.Forms
         {
             InitializeComponent();
             InitializeReportDataTable();
-            loadListLaporan();
+            LoadListLaporan();
         }
 
         private void InitializeReportDataTable()
         {
             reportDataTable.Columns.Add("ID", typeof(int));
             reportDataTable.Columns.Add("Title", typeof(string));
+            reportDataTable.Columns.Add("Status", typeof(string));
             reportDataTable.Columns.Add("NIM", typeof(string));
             reportDataTable.Columns.Add("Tanggal Pembuatan", typeof(DateTime));
         }
 
-        private async void loadListLaporan()
+        private async void LoadListLaporan()
         {
-            List<Report> list = await ReportController.GetAllReportAsync();
-            if (list != null)
+            try
             {
-                int i = 1;
-                foreach (var report in list)
+                List<Report> list = await ReportController.GetAllReportAsync();
+                if (list != null && list.Any())
                 {
+                    int i = 1;
+                    foreach (var report in list)
+                    {
+                        // Add data to DataTable with validation
+                        DataRow row = reportDataTable.NewRow();
+                        row["ID"] = i;
+                        row["Title"] = report.Title ?? string.Empty;  // Null check
+                        row["Status"] = report.Status ?? string.Empty; // Null check for Status
+                        row["NIM"] = report.StudentId ?? string.Empty; // Null check
+                        row["Tanggal Pembuatan"] = report.CreatedAt != DateTime.MinValue ? report.CreatedAt : DateTime.Now; // Validate date
+                        reportDataTable.Rows.Add(row);
+                        i++;
+                    }
 
-                    // Add data to DataTable
-                    DataRow row = reportDataTable.NewRow();
-                    row["ID"] = i;
-                    row["Title"] = report.Title;
-                    row["NIM"] = report.StudentId;
-                    row["Tanggal Pembuatan"] = report.CreatedAt;
-                    reportDataTable.Rows.Add(row);
-                    i++;
+                    DataView dvReport = reportDataTable.DefaultView;
+                    listlaporan.DataSource = dvReport.ToTable();
+                    listlaporan.Columns["ID"].Width = 50;
+                    listlaporan.Columns["Title"].Width = 175;
+                    listlaporan.Columns["Status"].Width = 150;
+                    listlaporan.Columns["NIM"].Width = 250;
+                    listlaporan.Columns["Tanggal Pembuatan"].Width = 150;
                 }
-                DataView dvReport = reportDataTable.DefaultView;
-                listlaporan.DataSource = dvReport.ToTable();
-                listlaporan.Columns["ID"].Width = 50;
-                listlaporan.Columns["Title"].Width = 200;
-                listlaporan.Columns["NIM"].Width = 300;
-                listlaporan.Columns["Tanggal Pembuatan"].Width = 150;
+                else
+                {
+                    MessageBox.Show("No reports found.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            else
+            catch (HttpRequestException ex)
             {
-                Console.WriteLine("No reports found or an error occurred.");
+                MessageBox.Show($"Network error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void listlaporan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void addbtn_Click(object sender, EventArgs e)
+        {
+            // Pop up page for Create Report
+            FormCreate buatlaporan = new FormCreate();
+            buatlaporan.Show();
+        }
+
+        private void editdeletebtn_Click(object sender, EventArgs e)
+        {
+            // Pop up page for Edit Report
+            FormEditDelete editlaporan = new FormEditDelete();
+            editlaporan.Show();
+        }
+
+        private void deletebtn_Click(object sender, EventArgs e)
+        {
+            // Pop up page for Delete Report
+            FormEditDelete deletelaporan = new FormEditDelete();
+            deletelaporan.Show();
+        }
+
+        private void searchbtn_Click(object sender, EventArgs e)
+        {
+            // Pop up page for Delete Report
+            FormSearch searchlaporan = new FormSearch();
+            searchlaporan.Show();
+        }
+
     }
 }
