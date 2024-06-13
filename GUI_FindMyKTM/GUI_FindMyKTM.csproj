@@ -152,6 +152,9 @@
     <EmbeddedResource Include="Forms\FormCreate.resx">
       <DependentUpon>FormCreate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDetailLaporan.resx">
+      <DependentUpon>FormDetailLaporan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormEditDelete.resx">
       <DependentUpon>FormEditDelete.cs</DependentUpon>
     </EmbeddedResource>

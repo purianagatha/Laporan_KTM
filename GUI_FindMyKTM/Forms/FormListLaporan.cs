@@ -78,7 +78,21 @@ namespace GUI_FindMyKTM.Forms
 
         private void listlaporan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Ensure the click is not on the header row
+            if (e.RowIndex >= 0)
+            {
+                // Retrieve the data from the selected row
+                int reportId = Convert.ToInt32(listlaporan.Rows[e.RowIndex].Cells["ID"].Value);
+                string title = listlaporan.Rows[e.RowIndex].Cells["Title"].Value.ToString();
+                string status = listlaporan.Rows[e.RowIndex].Cells["Status"].Value.ToString();
+                string nim = listlaporan.Rows[e.RowIndex].Cells["NIM"].Value.ToString();
+                DateTime createdAt = Convert.ToDateTime(listlaporan.Rows[e.RowIndex].Cells["Tanggal Pembuatan"].Value);
 
+                // Create and display the detail form
+                FormDetailLaporan reportDetailsForm = new FormDetailLaporan();
+                reportDetailsForm.LoadReportDetails(reportId, title, nim, createdAt, status);
+                reportDetailsForm.ShowDialog();
+            }
         }
 
         private void addbtn_Click(object sender, EventArgs e)
