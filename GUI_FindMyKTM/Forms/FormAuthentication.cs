@@ -59,7 +59,8 @@ namespace GUI_FindMyKTM.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            Form1 dashboard = new Form1();
+            dashboard.ShowDialog();
         }
     }
 }

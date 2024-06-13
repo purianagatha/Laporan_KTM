@@ -25,10 +25,13 @@ namespace GUI_FindMyKTM.Forms
 
         private void InitializeReportDataTable()
         {
+            // Clean Code: Initialize DataTable columns
+
             reportDataTable.Columns.Add("ID", typeof(int));
             reportDataTable.Columns.Add("Title", typeof(string));
             reportDataTable.Columns.Add("Status", typeof(string));
-            reportDataTable.Columns.Add("NIM", typeof(string));
+            reportDataTable.Columns.Add("studentID", typeof(string));
+            reportDataTable.Columns.Add("Description", typeof(string)); 
             reportDataTable.Columns.Add("Tanggal Pembuatan", typeof(DateTime));
         }
 
@@ -36,30 +39,10 @@ namespace GUI_FindMyKTM.Forms
         {
             try
             {
-                List<Report> list = await ReportController.GetAllReportAsync();
-                if (list != null && list.Any())
+                var reports = await ReportController.GetAllReportAsync();
+                if (reports != null && reports.Any())
                 {
-                    int i = 1;
-                    foreach (var report in list)
-                    {
-                        // Add data to DataTable with validation
-                        DataRow row = reportDataTable.NewRow();
-                        row["ID"] = i;
-                        row["Title"] = report.Title ?? string.Empty;  // Null check
-                        row["Status"] = report.Status ?? string.Empty; // Null check for Status
-                        row["NIM"] = report.StudentId ?? string.Empty; // Null check
-                        row["Tanggal Pembuatan"] = report.CreatedAt != DateTime.MinValue ? report.CreatedAt : DateTime.Now; // Validate date
-                        reportDataTable.Rows.Add(row);
-                        i++;
-                    }
-
-                    DataView dvReport = reportDataTable.DefaultView;
-                    listlaporan.DataSource = dvReport.ToTable();
-                    listlaporan.Columns["ID"].Width = 50;
-                    listlaporan.Columns["Title"].Width = 175;
-                    listlaporan.Columns["Status"].Width = 150;
-                    listlaporan.Columns["NIM"].Width = 250;
-                    listlaporan.Columns["Tanggal Pembuatan"].Width = 150;
+                    PopulateDataTable(reports);
                 }
                 else
                 {
@@ -68,59 +51,105 @@ namespace GUI_FindMyKTM.Forms
             }
             catch (HttpRequestException ex)
             {
+                // Secure Code: Handle network-related exceptions
+
                 MessageBox.Show($"Network error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
+                // Secure Code: Handle general exceptions
+
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        private void PopulateDataTable(IEnumerable<Report> reports)
+        {
+            // Clean Code: Separate method to populate DataTable
+
+            int i = 1;
+            foreach (var report in reports)
+            {
+                DataRow row = reportDataTable.NewRow();
+                row["ID"] = i;
+                row["Title"] = report.Title ?? string.Empty; // Secure Code: Null check
+                row["Status"] = report.Status ?? string.Empty; // Secure Code: Null check
+                row["StudentID"] = report.StudentId ?? string.Empty; // Secure Code: Null check
+                row["Description"] = report.Description ?? string.Empty; // Secure Code: Null check
+                row["Tanggal Pembuatan"] = report.CreatedAt != DateTime.MinValue ? report.CreatedAt : DateTime.Now; // Secure Code: Validate date
+                reportDataTable.Rows.Add(row);
+                i++;
+            }
+
+            DataView dvReport = reportDataTable.DefaultView;
+            listlaporan.DataSource = dvReport.ToTable();
+            ConfigureDataGridView();
+        }
+
+        private void ConfigureDataGridView()
+        {
+            // Clean Code: Configure DataGridView columns
+
+            listlaporan.Columns["ID"].Width = 50;
+            listlaporan.Columns["Title"].Width = 175;
+            listlaporan.Columns["Status"].Width = 150;
+            listlaporan.Columns["StudentID"].Width = 250;
+            listlaporan.Columns["Description"].Width = 150;
+            listlaporan.Columns["Tanggal Pembuatan"].Width = 150;
+        }
+
         private void listlaporan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Ensure the click is not on the header row
+            // Clean Code: Check if the click is not on the header row
+
             if (e.RowIndex >= 0)
             {
-                // Retrieve the data from the selected row
-                int reportId = Convert.ToInt32(listlaporan.Rows[e.RowIndex].Cells["ID"].Value);
-                string title = listlaporan.Rows[e.RowIndex].Cells["Title"].Value.ToString();
-                string status = listlaporan.Rows[e.RowIndex].Cells["Status"].Value.ToString();
-                string nim = listlaporan.Rows[e.RowIndex].Cells["NIM"].Value.ToString();
-                DateTime createdAt = Convert.ToDateTime(listlaporan.Rows[e.RowIndex].Cells["Tanggal Pembuatan"].Value);
+                var selectedRow = listlaporan.Rows[e.RowIndex];
+                int reportId = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+                string title = selectedRow.Cells["Title"].Value.ToString();
+                string status = selectedRow.Cells["Status"].Value.ToString();
+                string studentId = selectedRow.Cells["StudentID"].Value.ToString();
+                DateTime createdAt = Convert.ToDateTime(selectedRow.Cells["Tanggal Pembuatan"].Value);
+                string description = selectedRow.Cells["Description"].Value.ToString();
 
-                // Create and display the detail form
-                FormDetailLaporan reportDetailsForm = new FormDetailLaporan();
-                reportDetailsForm.LoadReportDetails(reportId, title, nim, createdAt, status);
-                reportDetailsForm.ShowDialog();
+                ShowReportDetails(reportId, title, studentId, createdAt, status, description);
             }
+        }
+
+        private void ShowReportDetails(int reportId, string title, string studentId, DateTime createdAt, string status, string description)
+        {
+            // Clean Code: Separate method to show report details
+
+            var reportDetailsForm = new FormDetailLaporan();
+            reportDetailsForm.LoadReportDetailsAsync(reportId, title, studentId, createdAt, status, description);
+            reportDetailsForm.ShowDialog();
         }
 
         private void addbtn_Click(object sender, EventArgs e)
         {
-            // Pop up page for Create Report
-            FormCreate buatlaporan = new FormCreate();
-            buatlaporan.Show();
+            ShowForm(new FormCreate());
         }
 
         private void editdeletebtn_Click(object sender, EventArgs e)
         {
-            // Pop up page for Edit Report
-            FormEditDelete editlaporan = new FormEditDelete();
-            editlaporan.Show();
+            ShowForm(new FormEditDelete());
         }
 
         private void deletebtn_Click(object sender, EventArgs e)
         {
-            // Pop up page for Delete Report
-            FormEditDelete deletelaporan = new FormEditDelete();
-            deletelaporan.Show();
+            ShowForm(new FormEditDelete());
         }
 
         private void searchbtn_Click(object sender, EventArgs e)
         {
-            // Pop up page for Delete Report
-            FormSearch searchlaporan = new FormSearch();
-            searchlaporan.Show();
+            ShowForm(new FormSearch());
+        }
+
+        private void ShowForm(Form form)
+        {
+            // Clean Code: Reusable method to show forms
+
+            form.Show();
         }
 
     }
