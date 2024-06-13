@@ -10,8 +10,6 @@ namespace GUI_FindMyKTM.Reuseable.Controllers
 {
     public class AuthController
     {
-     
-        private HttpClient client = Connection.client;
         public async Task RegisterAsync(Student objStudent)
         {
             Student student = new Student()

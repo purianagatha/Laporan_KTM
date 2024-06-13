@@ -133,7 +133,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reuseable\Connection.cs" />
-    <Compile Include="Reuseable\ReportController.cs" />
+    <Compile Include="Reuseable\Controllers\AuthController.cs" />
+    <Compile Include="Reuseable\Controllers\ReportController.cs" />
     <Compile Include="Reuseable\Response\DefaultResponse.cs" />
     <Compile Include="ThemeColor.cs" />
     <EmbeddedResource Include="Form1.resx">
