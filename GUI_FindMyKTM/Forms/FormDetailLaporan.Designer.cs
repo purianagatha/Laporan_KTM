@@ -29,54 +29,129 @@
         private void InitializeComponent()
         {
             this.labelstatus = new System.Windows.Forms.Label();
-            this.labeltitle = new System.Windows.Forms.Label();
             this.labelstudentid = new System.Windows.Forms.Label();
+            this.labeltitle = new System.Windows.Forms.Label();
+            this.labeldescription = new System.Windows.Forms.Label();
+            this.labelcreatedat = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelstatus
             // 
             this.labelstatus.AutoSize = true;
-            this.labelstatus.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold);
-            this.labelstatus.Location = new System.Drawing.Point(21, 54);
-            this.labelstatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelstatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelstatus.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.labelstatus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelstatus.Location = new System.Drawing.Point(47, 480);
+            this.labelstatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelstatus.Name = "labelstatus";
-            this.labelstatus.Size = new System.Drawing.Size(90, 32);
+            this.labelstatus.Size = new System.Drawing.Size(85, 31);
             this.labelstatus.TabIndex = 1;
             this.labelstatus.Text = "Status";
             this.labelstatus.Click += new System.EventHandler(this.linktonama_Click);
             // 
-            // labeltitle
-            // 
-            this.labeltitle.AutoSize = true;
-            this.labeltitle.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold);
-            this.labeltitle.Location = new System.Drawing.Point(26, 116);
-            this.labeltitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labeltitle.Name = "labeltitle";
-            this.labeltitle.Size = new System.Drawing.Size(62, 32);
-            this.labeltitle.TabIndex = 2;
-            this.labeltitle.Text = "Title";
-            // 
             // labelstudentid
             // 
             this.labelstudentid.AutoSize = true;
-            this.labelstudentid.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.labelstudentid.Location = new System.Drawing.Point(26, 18);
-            this.labelstudentid.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelstudentid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelstudentid.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
+            this.labelstudentid.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelstudentid.Location = new System.Drawing.Point(48, 48);
+            this.labelstudentid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelstudentid.Name = "labelstudentid";
-            this.labelstudentid.Size = new System.Drawing.Size(71, 17);
+            this.labelstudentid.Size = new System.Drawing.Size(73, 19);
             this.labelstudentid.TabIndex = 3;
             this.labelstudentid.Text = "StudentID";
             this.labelstudentid.Click += new System.EventHandler(this.labelstudentid_Click);
             // 
+            // labeltitle
+            // 
+            this.labeltitle.AutoSize = true;
+            this.labeltitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labeltitle.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold);
+            this.labeltitle.Location = new System.Drawing.Point(48, 149);
+            this.labeltitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labeltitle.Name = "labeltitle";
+            this.labeltitle.Size = new System.Drawing.Size(81, 42);
+            this.labeltitle.TabIndex = 4;
+            this.labeltitle.Text = "Title";
+            // 
+            // labeldescription
+            // 
+            this.labeldescription.AutoSize = true;
+            this.labeldescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labeldescription.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
+            this.labeldescription.Location = new System.Drawing.Point(47, 338);
+            this.labeldescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labeldescription.Name = "labeldescription";
+            this.labeldescription.Size = new System.Drawing.Size(86, 19);
+            this.labeldescription.TabIndex = 5;
+            this.labeldescription.Text = "Description";
+            this.labeldescription.Click += new System.EventHandler(this.labeldescription_Click);
+            // 
+            // labelcreatedat
+            // 
+            this.labelcreatedat.AutoSize = true;
+            this.labelcreatedat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelcreatedat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelcreatedat.Location = new System.Drawing.Point(837, 496);
+            this.labelcreatedat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelcreatedat.Name = "labelcreatedat";
+            this.labelcreatedat.Size = new System.Drawing.Size(72, 18);
+            this.labelcreatedat.TabIndex = 6;
+            this.labelcreatedat.Text = "Created At";
+            this.labelcreatedat.Click += new System.EventHandler(this.labelcreatedat_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(49, 25);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 19);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Student Id";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(49, 121);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 23);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Title";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(41, 315);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 19);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Description";
+            // 
             // FormDetailLaporan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.labelstudentid);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelcreatedat);
+            this.Controls.Add(this.labeldescription);
             this.Controls.Add(this.labeltitle);
+            this.Controls.Add(this.labelstudentid);
             this.Controls.Add(this.labelstatus);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormDetailLaporan";
             this.Text = "FormDetailLaporan";
             this.ResumeLayout(false);
@@ -86,7 +161,12 @@
 
         #endregion
         private System.Windows.Forms.Label labelstatus;
-        private System.Windows.Forms.Label labeltitle;
         private System.Windows.Forms.Label labelstudentid;
+        private System.Windows.Forms.Label labeltitle;
+        private System.Windows.Forms.Label labeldescription;
+        private System.Windows.Forms.Label labelcreatedat;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
     }
 }
