@@ -94,6 +94,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Class1.cs" />
     <Compile Include="Forms\FormAuthentication.cs">
       <SubType>Form</SubType>
     </Compile>

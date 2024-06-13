@@ -62,6 +62,8 @@ namespace GUI_FindMyKTM.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            Form1 bypass = new Form1();
+            bypass.ShowDialog();
             authController.LoginAsync(loginEmail.Text, loginPassword.Text);
             Form1 dashboard = new Form1();
             dashboard.ShowDialog(); 
