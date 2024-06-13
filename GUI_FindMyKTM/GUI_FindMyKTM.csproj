@@ -94,6 +94,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormAuthentication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAuthentication.Designer.cs">
+      <DependentUpon>FormAuthentication.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormCreate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,12 +124,6 @@
     <Compile Include="Forms\FormListLaporan.Designer.cs">
       <DependentUpon>FormListLaporan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormRegister.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormRegister.Designer.cs">
-      <DependentUpon>FormRegister.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,9 +134,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reuseable\Connection.cs" />
     <Compile Include="Reuseable\ReportController.cs" />
+    <Compile Include="Reuseable\Response\DefaultResponse.cs" />
     <Compile Include="ThemeColor.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAuthentication.resx">
+      <DependentUpon>FormAuthentication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCreate.resx">
       <DependentUpon>FormCreate.cs</DependentUpon>
@@ -149,9 +153,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormListLaporan.resx">
       <DependentUpon>FormListLaporan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormRegister.resx">
-      <DependentUpon>FormRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSearch.resx">
       <DependentUpon>FormSearch.cs</DependentUpon>

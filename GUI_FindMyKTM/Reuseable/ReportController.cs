@@ -1,22 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
-using System.Text;
 using System.Threading.Tasks;
 using GUI_FindMyKTM.Entities;
+using GUI_FindMyKTM.Reuseable.Response;
 
 namespace GUI_FindMyKTM.Reuseable
 {
     public static class ReportController
     {
-        public class DefaultResponse<T>
-        {
-            public int StatusCode { get; set; }
-            public string Message { get; set; }
-            public T Data { get; set; }
-        }
         public static async Task<List<Report>> GetAllReportAsync()
         {
             HttpResponseMessage response = await Connection.client.GetAsync("api/Report");
