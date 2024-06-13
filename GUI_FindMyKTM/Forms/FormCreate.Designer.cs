@@ -37,8 +37,8 @@
             this.textBoxNIM = new System.Windows.Forms.TextBox();
             this.textBoxFakultas = new System.Windows.Forms.TextBox();
             this.textBoxNoHp = new System.Windows.Forms.TextBox();
-            this.textBoxAlasan = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBoxAlasan = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -108,6 +108,7 @@
             this.textBoxNIM.Name = "textBoxNIM";
             this.textBoxNIM.Size = new System.Drawing.Size(305, 28);
             this.textBoxNIM.TabIndex = 6;
+            this.textBoxNIM.TextChanged += new System.EventHandler(this.textBoxNIM_TextChanged);
             // 
             // textBoxFakultas
             // 
@@ -116,6 +117,7 @@
             this.textBoxFakultas.Name = "textBoxFakultas";
             this.textBoxFakultas.Size = new System.Drawing.Size(305, 28);
             this.textBoxFakultas.TabIndex = 7;
+            this.textBoxFakultas.TextChanged += new System.EventHandler(this.textBoxFakultas_TextChanged);
             // 
             // textBoxNoHp
             // 
@@ -124,15 +126,7 @@
             this.textBoxNoHp.Name = "textBoxNoHp";
             this.textBoxNoHp.Size = new System.Drawing.Size(305, 28);
             this.textBoxNoHp.TabIndex = 8;
-            // 
-            // textBoxAlasan
-            // 
-            this.textBoxAlasan.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAlasan.Location = new System.Drawing.Point(504, 72);
-            this.textBoxAlasan.Name = "textBoxAlasan";
-            this.textBoxAlasan.Size = new System.Drawing.Size(304, 28);
-            this.textBoxAlasan.TabIndex = 9;
-            this.textBoxAlasan.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.textBoxNoHp.TextChanged += new System.EventHandler(this.textBoxNoHp_TextChanged);
             // 
             // button1
             // 
@@ -145,13 +139,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // textBoxAlasan
+            // 
+            this.textBoxAlasan.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAlasan.Location = new System.Drawing.Point(504, 72);
+            this.textBoxAlasan.Name = "textBoxAlasan";
+            this.textBoxAlasan.Size = new System.Drawing.Size(297, 28);
+            this.textBoxAlasan.TabIndex = 11;
+            this.textBoxAlasan.TextChanged += new System.EventHandler(this.textBoxAlasan_TextChanged);
+            // 
             // FormCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(843, 458);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxAlasan);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxNoHp);
             this.Controls.Add(this.textBoxFakultas);
             this.Controls.Add(this.textBoxNIM);
@@ -179,7 +182,7 @@
         private System.Windows.Forms.TextBox textBoxNIM;
         private System.Windows.Forms.TextBox textBoxFakultas;
         private System.Windows.Forms.TextBox textBoxNoHp;
-        private System.Windows.Forms.TextBox textBoxAlasan;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBoxAlasan;
     }
 }

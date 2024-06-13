@@ -23,11 +23,6 @@ namespace GUI_FindMyKTM.Forms
 
         }
 
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             // SUBMIT BUTTON
@@ -42,6 +37,26 @@ namespace GUI_FindMyKTM.Forms
         }
 
         private void textBoxNama_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNIM_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxFakultas_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNoHp_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxAlasan_TextChanged(object sender, EventArgs e)
         {
 
         }
